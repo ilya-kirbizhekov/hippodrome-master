@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.Test;
 
+import javax.swing.event.HyperlinkEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,6 +44,16 @@ class HippodromeTest {
             verify(horse).move();
         }
 
+ }
+ @Test
+    public void getWinner()
+ {
+     Horse horse1 = new Horse("1", 1, 1);
+     Horse horse2 = new Horse("2", 1, 1);
+     Horse horse3 = new Horse("Буцефал", 1, 3);
+     Horse horse4 = new Horse("4", 1, 1);
+     Hippodrome hippodrome = new Hippodrome(List.of(horse1, horse2, horse3, horse4));
+     assertSame(horse3,hippodrome.getWinner());
  }
 
 }
