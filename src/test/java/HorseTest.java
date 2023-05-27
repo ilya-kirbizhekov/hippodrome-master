@@ -60,6 +60,7 @@ public class HorseTest {
         try (MockedStatic<Horse> mockedStatic = mockStatic(Horse.class)){
          new Horse("qwerty",1,1).move();
          mockedStatic.verify(()->Horse.getRandomDouble(0.2,0.9));
+
         }
 
     }
