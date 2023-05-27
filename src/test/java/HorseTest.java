@@ -35,6 +35,7 @@ public class HorseTest {
         name.setAccessible(true);
         String nameValue = (String) name.get(horse);
         assertEquals("qwerty", nameValue);
+
     }
 
 }
