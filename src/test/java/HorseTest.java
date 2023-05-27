@@ -1,4 +1,6 @@
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -16,7 +18,13 @@ public class HorseTest {
         {
             assertEquals("Name cannot be null.", e.getMessage());
         }
-
+    }
+    @ParameterizedTest
+    @ValueSource(strings = {"","    ", "\t\t", "\n\n\n\n\n\n\n"})
+    void BlankNameException(String name)
+    {
+        IllegalArgumentException e = assertThrows(IllegalArgumentException.class, ()->new Horse(name,1,1));
+        assertEquals("Name cannot be blank.",e.getMessage());
     }
 
 
