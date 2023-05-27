@@ -36,5 +36,24 @@ public class HorseTest {
         String nameValue = (String) name.get(horse);
         assertEquals("qwerty", nameValue);
     }
+    @ Test
+    public void GetSpeed(){
+        double expectedSpeed = 443;
+        Horse horse = new Horse("qqerty", expectedSpeed, 1);
+        assertEquals(expectedSpeed, horse.getSpeed());
+    }
+
+    @ Test
+    public void GetDistance(){
+        Horse horse = new Horse("qqerty", 1, 200);
+        assertEquals(200, horse.getDistance());
+    }
+    @Test
+    public void zeroDistanceByDefault(){
+        Horse horse = new Horse("qerty", 1);
+        assertEquals(0,horse.getDistance());
+    }
+
+
 
 }
